@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header .ul{
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.topic-bond{
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+}
+.text,.img{
+    flex: 1;
+    min-height: 0;
+}
+main{
+    gap: 15px;
+}
+body{
+    margin: 0;
+}
+.text{
+    background-color: blue;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    height: 100%;
+    width: 100%;
+}
