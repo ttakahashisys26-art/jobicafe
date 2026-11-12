@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="じょびかふぇのドリンク、スイーツ、フードをご紹介します。">
+    <title>MENU | jobi café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu-style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="jobi café ホーム">
+                <span class="brand__mark" aria-hidden="true">J</span>
+                <span class="brand__text">
+                    <span class="brand__name">jobi café</span>
+                    <span class="brand__tagline">a little pause in your day</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="メインナビゲーション">
+                <a class="site-nav__link" href="index.html">HOME</a>
+                <a class="site-nav__link is-current" href="menu.html" aria-current="page">MENU</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu-hero" aria-labelledby="menu-title">
+            <div class="menu-hero__inner">
+                <p class="eyebrow">GOOD FOOD, GOOD MOOD</p>
+                <h1 class="menu-hero__title" id="menu-title">Menu</h1>
+                <p class="menu-hero__lead">いつもの一杯も、ちょっと特別なおやつも。<br>今日の気分にぴったりのメニューをどうぞ。</p>
+                <span class="menu-hero__rule" aria-hidden="true"></span>
+                <p class="menu-hero__note">季節や仕入れ状況により、内容が変わる場合があります。</p>
+            </div>
+        </section>
+
+        <section class="menu-categories content-width" aria-labelledby="categories-title">
+            <div class="section-heading">
+                <p class="eyebrow">OUR MENU</p>
+                <h2 class="section-heading__title" id="categories-title">お気に入りを見つけてください</h2>
+                <p class="section-heading__description">コーヒーからお食事まで、じょびかふぇのメニューをご紹介します。</p>
+            </div>
+
+            <div class="category-grid">
+                <a class="category-card category-card--drink" href="menu-drink.html">
+                    <span class="category-card__number">01</span>
+                    <span class="category-card__eyebrow">COFFEE & TEA</span>
+                    <span class="category-card__title">ドリンク</span>
+                    <span class="category-card__description">ほっとひと息つける、こだわりの一杯。</span>
+                    <span class="category-card__link">メニューを見る <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="category-card category-card--sweets" href="menu-sweets.html">
+                    <span class="category-card__number">02</span>
+                    <span class="category-card__eyebrow">SWEETS</span>
+                    <span class="category-card__title">スイーツ</span>
+                    <span class="category-card__description">コーヒーと一緒に楽しみたい甘いもの。</span>
+                    <span class="category-card__link">メニューを見る <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="category-card category-card--food" href="menu-food.html">
+                    <span class="category-card__number">03</span>
+                    <span class="category-card__eyebrow">LIGHT MEALS</span>
+                    <span class="category-card__title">フード</span>
+                    <span class="category-card__description">ランチや軽食にぴったりのメニュー。</span>
+                    <span class="category-card__link">メニューを見る <span aria-hidden="true">→</span></span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">jobi café</a>
+        <p>一杯のコーヒーから、心ほどける時間を。</p>
+        <small>&copy; jobi café</small>
+    </footer>
+</body>
+</html>
