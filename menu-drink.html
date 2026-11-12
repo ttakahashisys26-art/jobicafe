@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="じょびかふぇのコーヒー、紅茶、ソフトドリンクをご紹介します。">
+    <title>DRINK MENU | jobi café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu-style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="jobi café ホーム">
+                <span class="brand__mark" aria-hidden="true">J</span>
+                <span class="brand__text">
+                    <span class="brand__name">jobi café</span>
+                    <span class="brand__tagline">a little pause in your day</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="メインナビゲーション">
+                <a class="site-nav__link" href="index.html">HOME</a>
+                <a class="site-nav__link is-current" href="menu.html" aria-current="page">MENU</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="menu-page-main">
+        <header class="menu-page-heading">
+            <p class="eyebrow">OUR MENU</p>
+            <h1 class="menu-page-heading__title">Drink</h1>
+            <p class="menu-page-heading__description">香り豊かなコーヒーや、気分に合わせて選べるドリンクをご用意しました。</p>
+            <nav class="category-nav" aria-label="メニューカテゴリ">
+                <a class="category-nav__link is-current" href="menu-drink.html" aria-current="page">ドリンク</a>
+                <a class="category-nav__link" href="menu-sweets.html">スイーツ</a>
+                <a class="category-nav__link" href="menu-food.html">フード</a>
+            </nav>
+        </header>
+
+        <section class="menu-product-section" aria-labelledby="coffee-title">
+            <div class="menu-product-section__heading">
+                <span class="menu-product-section__number">01</span>
+                <h2 class="menu-product-section__title" id="coffee-title">コーヒー</h2>
+                <span class="menu-product-section__subtitle">COFFEE</span>
+            </div>
+            <div class="product-grid">
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/hand-drip-coffee.jpg" alt="ハンドドリップコーヒー" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">HOUSE BLEND</p><h3 class="menu-product-card__title">ハンドドリップコーヒー</h3><p class="menu-product-card__description">豆の個性を引き出しながら、一杯ずつ丁寧に淹れました。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT</span><span class="menu-product-card__price">550円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/americano.jpg" alt="アメリカーノ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">ESPRESSO</p><h3 class="menu-product-card__title">アメリカーノ</h3><p class="menu-product-card__description">エスプレッソの香りをすっきり楽しめる一杯です。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">480円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/cafe-latte.jpg" alt="カフェラテ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">MILK & ESPRESSO</p><h3 class="menu-product-card__title">カフェラテ</h3><p class="menu-product-card__description">まろやかなミルクとエスプレッソの定番ラテ。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">580円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/cappuccino.jpg" alt="カプチーノ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">MILK & ESPRESSO</p><h3 class="menu-product-card__title">カプチーノ</h3><p class="menu-product-card__description">ふんわり泡立てたミルクが、コーヒーをやさしく包みます。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT</span><span class="menu-product-card__price">580円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/cafe-mocha.jpg" alt="カフェモカ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">CHOCOLATE</p><h3 class="menu-product-card__title">カフェモカ</h3><p class="menu-product-card__description">エスプレッソにチョコレートを合わせた、甘い一杯。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">620円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/caramel-latte.jpg" alt="キャラメルラテ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">CARAMEL</p><h3 class="menu-product-card__title">キャラメルラテ</h3><p class="menu-product-card__description">キャラメルのコクとミルクの甘みを楽しめます。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">650円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/espresso.jpg" alt="エスプレッソ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">SINGLE SHOT</p><h3 class="menu-product-card__title">エスプレッソ</h3><p class="menu-product-card__description">豆の香りと深いコクを、小さなカップに凝縮しました。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT</span><span class="menu-product-card__price">420円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/iced-coffee.jpg" alt="アイスコーヒー" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">SLOW BREW</p><h3 class="menu-product-card__title">アイスコーヒー</h3><p class="menu-product-card__description">すっきりした後味で、季節を問わず楽しめる一杯。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">500円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/espresso-tonic.jpg" alt="エスプレッソトニック" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">SPARKLING</p><h3 class="menu-product-card__title">エスプレッソトニック</h3><p class="menu-product-card__description">ほろ苦いエスプレッソと爽やかなトニックの組み合わせ。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">620円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/orange-espresso-spritz.jpg" alt="オレンジエスプレッソスプリッツ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">CITRUS</p><h3 class="menu-product-card__title">オレンジエスプレッソスプリッツ</h3><p class="menu-product-card__description">オレンジの香りとエスプレッソを合わせた炭酸ドリンク。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">680円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/coffee-mojito.jpg" alt="コーヒーモヒート" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">MINT</p><h3 class="menu-product-card__title">コーヒーモヒート</h3><p class="menu-product-card__description">コーヒーのほろ苦さにミントの清涼感を添えました。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">650円</span></div></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu-product-section" aria-labelledby="tea-title">
+            <div class="menu-product-section__heading">
+                <span class="menu-product-section__number">02</span>
+                <h2 class="menu-product-section__title" id="tea-title">紅茶</h2>
+                <span class="menu-product-section__subtitle">TEA</span>
+            </div>
+            <div class="product-grid">
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/darjeeling-tea.jpg" alt="ダージリンティー" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">FIRST FLUSH</p><h3 class="menu-product-card__title">ダージリンティー</h3><p class="menu-product-card__description">華やかな香りと軽やかな渋みが広がる紅茶です。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT</span><span class="menu-product-card__price">520円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/earl-grey-tea.jpg" alt="アールグレイティー" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">BERGAMOT</p><h3 class="menu-product-card__title">アールグレイティー</h3><p class="menu-product-card__description">ベルガモットの香りをまとった、すっきりとした紅茶。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">520円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/masala-chai.jpg" alt="マサラチャイ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">SPICED TEA</p><h3 class="menu-product-card__title">マサラチャイ</h3><p class="menu-product-card__description">スパイスの香りとミルクのまろやかさを楽しめます。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT</span><span class="menu-product-card__price">600円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/lemon-iced-tea.jpg" alt="レモンアイスティー" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">CITRUS</p><h3 class="menu-product-card__title">レモンアイスティー</h3><p class="menu-product-card__description">紅茶の香りにレモンを添えた、爽やかなアイスティー。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">560円</span></div></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu-product-section" aria-labelledby="other-drink-title">
+            <div class="menu-product-section__heading">
+                <span class="menu-product-section__number">03</span>
+                <h2 class="menu-product-section__title" id="other-drink-title">ソフトドリンク</h2>
+                <span class="menu-product-section__subtitle">OTHER</span>
+            </div>
+            <div class="product-grid">
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/lemonade.jpg" alt="自家製レモネード" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">HOMEMADE</p><h3 class="menu-product-card__title">自家製レモネード</h3><p class="menu-product-card__description">レモンの酸味とやさしい甘みを楽しむ自家製ドリンク。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">HOT / ICED</span><span class="menu-product-card__price">580円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/ginger-ale.jpg" alt="ジンジャーエール" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">GINGER</p><h3 class="menu-product-card__title">ジンジャーエール</h3><p class="menu-product-card__description">生姜の香りが広がる、すっきりとした炭酸ドリンク。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">500円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/melon-cream-soda.jpg" alt="メロンクリームソーダ" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">CLASSIC</p><h3 class="menu-product-card__title">メロンクリームソーダ</h3><p class="menu-product-card__description">メロンソーダにバニラアイスをのせた、喫茶店の定番。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">650円</span></div></div>
+                </article>
+                <article class="menu-product-card">
+                    <div class="menu-product-card__image-wrap"><img class="menu-product-card__image" src="images/menu/orange-juice.jpg" alt="オレンジジュース" loading="lazy"></div>
+                    <div class="menu-product-card__body"><p class="menu-product-card__eyebrow">FRUIT</p><h3 class="menu-product-card__title">オレンジジュース</h3><p class="menu-product-card__description">オレンジの甘酸っぱさをそのまま楽しめる一杯。</p><div class="menu-product-card__footer"><span class="menu-product-card__detail">ICED</span><span class="menu-product-card__price">480円</span></div></div>
+                </article>
+            </div>
+        </section>
+
+        <p class="menu-page-note">表示価格はサンプルです。内容・価格は変更になる場合があります。</p>
+        <a class="menu-back-link" href="menu.html">← MENU一覧へ戻る</a>
+    </main>
+
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">jobi café</a>
+        <p>一杯のコーヒーから、心ほどける時間を。</p>
+        <small>&copy; jobi café</small>
+    </footer>
+</body>
+</html>
