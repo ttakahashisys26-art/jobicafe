@@ -571,6 +571,7 @@ a:focus-visible {
 }
 
 @media (max-width: 520px) {
+
     .content-width,
     .site-header__inner {
         width: min(100% - 32px, 1120px);
@@ -674,6 +675,7 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
