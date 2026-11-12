@@ -554,6 +554,19 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
+    .site-header__inner {
+        gap: 16px;
+    }
+
+    .site-nav {
+        gap: 16px;
+    }
+
+    .site-nav__link {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+    }
+
     .category-grid {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -578,7 +591,11 @@ a:focus-visible {
     }
 
     .site-header__inner {
+        flex-wrap: wrap;
+        justify-content: center;
         min-height: 72px;
+        gap: 8px;
+        padding-block: 12px;
     }
 
     .brand__mark {
@@ -590,17 +607,25 @@ a:focus-visible {
         font-size: 19px;
     }
 
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
     .brand__tagline {
         font-size: 9px;
     }
 
     .site-nav {
-        gap: 16px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px 8px;
     }
 
     .site-nav__link {
-        font-size: 11px;
-        letter-spacing: 0.1em;
+        font-size: 10px;
+        letter-spacing: 0.04em;
     }
 
     .menu-hero {
