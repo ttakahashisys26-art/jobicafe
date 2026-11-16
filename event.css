@@ -1,0 +1,152 @@
+.upcoming-events {
+    --event-cream: #f8f4ed;
+    --event-paper: #fffdf9;
+    --event-brown: #4c3528;
+    --event-brown-soft: #745a48;
+    --event-terracotta: #a96042;
+    --event-line: #ded2c2;
+    --event-font-heading: "Playfair Display", Georgia, serif;
+
+    padding: clamp(62px, 8vw, 98px) 24px;
+    background: var(--event-cream);
+    color: var(--event-brown);
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN",
+        Meiryo, sans-serif;
+    line-height: 1.75;
+}
+
+.upcoming-events,
+.upcoming-events *,
+.upcoming-events *::before,
+.upcoming-events *::after {
+    box-sizing: border-box;
+}
+
+/* セクション見出し */
+.upcoming-events__heading {
+    margin-bottom: 38px;
+    text-align: center;
+}
+
+.upcoming-events__eyebrow {
+    margin: 0;
+    color: var(--event-terracotta);
+    font-family: var(--event-font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+}
+
+.upcoming-events__heading h2 {
+    margin: 9px 0 8px;
+    font-size: clamp(23px, 3vw, 32px);
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.upcoming-events__lead {
+    margin: 0;
+    color: var(--event-brown-soft);
+    font-size: 14px;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--event-line);
+    background: var(--event-paper);
+}
+
+.event-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.event-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.event-card__category {
+    margin: 0 0 6px;
+    color: var(--event-terracotta);
+    font-family: var(--event-font-heading);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+}
+
+.event-card__title {
+    margin: 0;
+    font-family: var(--event-font-heading);
+    font-size: clamp(23px, 2.5vw, 28px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.event-card__subtitle {
+    margin: 12px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.event-card__description {
+    margin: 12px 0 24px;
+    color: var(--event-brown-soft);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.event-card__schedule {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 12px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--event-line);
+}
+
+.event-card__schedule time {
+    color: var(--event-terracotta);
+    font-family: var(--event-font-heading);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.event-card__schedule span {
+    color: var(--event-brown-soft);
+    font-size: 12px;
+}
+
+@media (max-width: 760px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 520px) {
+    .upcoming-events {
+        padding-inline: 16px;
+    }
+
+    .event-card__body {
+        padding: 20px;
+    }
+}
