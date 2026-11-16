@@ -9,17 +9,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.html">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu-style.css">
+    <link rel="stylesheet" href="event.css">
 </head>
 <body>
-    <header class="header">
-        <h1><a href="index.html">JobiCafe</a></h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="#"></a>menu</li>
-                <li><a href="#"></a>crafted</li>
-                <li><a href="event.html"></a>Event</li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="jobi café ホーム">
+                <span class="brand__mark" aria-hidden="true">J</span>
+                <span class="brand__text">
+                    <span class="brand__name">jobi café</span>
+                    <span class="brand__tagline">a little pause in your day</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="メインナビゲーション">
+                <a class="site-nav__link" href="index.html">HOME</a>
+                <a class="site-nav__link is-current" href="menu.html" aria-current="page">MENU</a>
+            </nav>
+        </div>
     </header>
+
+    <section class="upcoming-events" aria-labelledby="upcoming-title">
+    <div class="upcoming-events__heading">
+        <p class="upcoming-events__eyebrow">UPCOMING EVENTS</p>
+        <h2 id="upcoming-title">もうすぐ開催するイベント</h2>
+        <p class="upcoming-events__lead">
+            コーヒーと、いつもと少し違うひとときを。
+        </p>
+    </div>
+
+    <div class="event-grid">
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="images/event/Coffee-Tasting.png"
+                alt="木のトレーに並んだ3種類のコーヒー"
+                width="1448"
+                height="1086"
+            >
+
+            <div class="event-card__body">
+                <p class="event-card__category">COFFEE EXPERIENCE</p>
+                <h3 class="event-card__title">Coffee Tasting</h3>
+                <p class="event-card__subtitle">
+                    お気に入りの一杯を見つける、コーヒー飲み比べ
+                </p>
+                <p class="event-card__description">
+                    産地や焙煎の異なるコーヒーを飲み比べ。
+                    香りや味わいの違いを、ゆっくり楽しみませんか。
+                </p>
+
+                <div class="event-card__schedule">
+                    <time datetime="2026-12-05T14:00">
+                        2026.12.05 SAT
+                    </time>
+                    <span>14:00–15:00</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="images/event/Seasonal-Sweets.png"
+                alt="クリーム色の器に盛られた栗や果物のスイーツ"
+                width="1448"
+                height="1086"
+            >
+
+            <div class="event-card__body">
+                <p class="event-card__category">SWEETS & COFFEE</p>
+                <h3 class="event-card__title">Seasonal Sweets</h3>
+                <p class="event-card__subtitle">
+                    季節のお菓子と過ごす、午後のひととき
+                </p>
+                <p class="event-card__description">
+                    季節の素材を使ったスイーツと、相性のよい一杯を。
+                    この日だけの組み合わせをお楽しみください。
+                </p>
+
+                <div class="event-card__schedule">
+                    <time datetime="2026-12-12T14:00">
+                        2026.12.12 SAT
+                    </time>
+                    <span>14:00–15:30</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="images/event/Acoustic-Night.png"
+                alt="暖かな照明のカフェでコーヒーとギターの生演奏を楽しむ風景"
+                width="1448"
+                height="1086"
+            >
+
+            <div class="event-card__body">
+                <p class="event-card__category">MUSIC & COFFEE</p>
+                <h3 class="event-card__title">Acoustic Night</h3>
+                <p class="event-card__subtitle">
+                    やさしい音楽とコーヒーを楽しむ夜
+                </p>
+                <p class="event-card__description">
+                    ギターの音色が響く、いつもより少し特別な夜。
+                    温かいコーヒーを片手に、心ほどける時間を。
+                </p>
+
+                <div class="event-card__schedule">
+                    <time datetime="2026-12-19T18:00">
+                        2026.12.19 SAT
+                    </time>
+                    <span>18:00–20:00</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
 </body>
 </html>
