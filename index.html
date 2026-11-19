@@ -3,84 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>じょびかふぇトップページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu-style.css">
+    <link rel="stylesheet" href="event.css">
 </head>
 <body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="jobi café ホーム">
+                <span class="brand__mark" aria-hidden="true">J</span>
+                <span class="brand__text">
+                    <span class="brand__name">jobi café</span>
+                    <span class="brand__tagline">a little pause in your day</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="メインナビゲーション">
+                <a class="site-nav__link is-current" href="index.html">HOME</a>
+                <a class="site-nav__link" href="menu.html" aria-current="page">MENU</a>
+                <a class="site-nav__link" href="event.html" aria-current="page">EVENT</a>
+                <a class="site-nav__link" href="featured.html" aria-current="page">FEATURED</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
+        <section class="menu-hero" aria-labelledby="menu-title">
+            <div class="menu-hero__inner">
+                <p class="eyebrow">MENU,EVENT,FEATURED </p>
+                <h1 class="menu-hero__title" id="menu-title">Welcome</h1>
+                <p class="menu-hero__lead">いつもの一杯も、ちょっと特別なおやつも。<br>今日の気分にぴったりのイベントをどうぞ。</p>
+            </div>
+        </section>
 
-        <header>
-            <h1><a href="">ジョビカフェ</a></h1>
-            <ul><a href="menu.html">メニュー</a></ul>
-            <ul><a href="event.html">イベント</a></ul>
-            <ul><a href="">こだわり</a></ul>
-        </header>
-
-        <div class="topic-bond">
-            <div id="top-image">
-                <img src="noImage.jpg" alt="top-image">
-            </div>
-            <div id="plane-cafe-info">
-                <h2></h2>
-            </div>
-        </div>
-
-        <div class="topic-bond">
-            <div id="concept-image">
-                <img src="noImage.jpg" alt="concept">
-            </div>
-            <div id="concept-info">
-                <p></p>
-            </div>
-        </div>
-
-        <div class="topic-bond">
-            <div class="img">
-                <img src="noImage.jpg" alt="concept">
-            </div>
-            <div class="text">
-                <p></p>
-            </div>
-        </div>
-
-        <div class="topic-bond">
-            <div class="img">
-                <img src="noImage.jpg" alt="concept">
-            </div>
-            <div class="text">
-                <p></p>
-            </div>
-        </div>
-
-        <div class="topic-bond">
-            <div class="img">
-                <img src="noImage.jpg" alt="topic">
-            </div>
-            <div class="text">
-                <p></p>
+        <section class="menu-categories content-width" aria-labelledby="categories-title">
+            <div class="section-heading">
+                <p class="eyebrow">OUR MENU</p>
+                <h2 class="section-heading__title" id="categories-title">お気に入りを見つけてください</h2>
+                <p class="section-heading__description">コーヒーからお食事まで、じょびかふぇのメニューをご紹介します。</p>
             </div>
 
-        </div>
-
-
-
-
-
-
-        <div class="topic-bond">
-            <div id="shop-map">
-                
+            <div class="category-grid">
+                <a class="category-card category-card--drink" href="menu.html">
+                    <span class="category-card__number">01</span>
+                    <span class="category-card__eyebrow">MENU</span>
+                    <span class="category-card__title">メニュー</span>
+                    <span class="category-card__description">絶品</span>
+                    <span class="category-card__link">メニューを見る <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="category-card category-card--sweets" href="event.html">
+                    <span class="category-card__number">02</span>
+                    <span class="category-card__eyebrow">EVENTS</span>
+                    <span class="category-card__title">イベント</span>
+                    <span class="category-card__description">ギター、特別な夜</span>
+                    <span class="category-card__link">イベントを見る <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="category-card category-card--food" href="featured.html">
+                    <span class="category-card__number">03</span>
+                    <span class="category-card__eyebrow">featured</span>
+                    <span class="category-card__title">特色</span>
+                    <span class="category-card__description">もりじょびの特色について</span>
+                    <span class="category-card__link">特色を見る <span aria-hidden="true">→</span></span>
+                </a>
             </div>
-            <div id="shop-access">
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+        </section>
+        <section class="upcoming-events" aria-labelledby="upcoming-title">
+    <div class="upcoming-events__heading">
+        <p class="upcoming-events__eyebrow">ACCESS</p>
+        <h2 id="upcoming-title">アクセス方法</h2>
+        <p class="upcoming-events__lead">
+            車、電車、公共交通機関でお越しの方へ
+        </p>
+    </div>
+
+    <div class="event-grid">
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="noImage.jpg"
+                alt="木のトレーに並んだ3種類のコーヒー"
+                width="1448"
+                height="1086"
+            >
+
+            <div class="event-card__body">
+                <p class="event-card__category">by public trains</p>
+                <h3 class="event-card__title">TRAINS</h3>
+                <p class="event-card__description">
+                    JR各線・IGRいわて銀河鉄道「盛岡駅」より徒歩約15分
+                    東口（滝の広場側）を出て、開運橋を渡り「大通商店街」
+                    を直進してください。大通3丁目を抜けてさらに東へ進んだ左手にございます。
+                </p>
+
+
             </div>
+        </article>
 
-        </div>
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="noImage.jpg"
+                alt="クリーム色の器に盛られた栗や果物のスイーツ"
+                width="1448"
+                height="1086"
+            >
 
+            <div class="event-card__body">
+                <p class="event-card__category">by private car</p>
+                <h3 class="event-card__title">CAR</h3>
+                <p class="event-card__description">
+                    東北自動車道「盛岡IC」より約15分
+                    国道46号を盛岡市街地方面へ進み、開運橋を渡って大通エリアへお入りください。
+                </p>
 
+            </div>
+        </article>
 
+        <article class="event-card">
+            <img
+                class="event-card__image"
+                src="noImage.jpg"
+                alt="暖かな照明のカフェでコーヒーとギターの生演奏を楽しむ風景"
+                width="1448"
+                height="1086"
+            >
+
+            <div class="event-card__body">
+                <p class="event-card__category">by walk</p>
+                <h3 class="event-card__title">WALK</h3>
+
+                <p class="event-card__description">
+                    盛岡駅「東口（滝の広場側）」を出て、目の前の大通りを直進し、
+                    北上川にかかる「開運橋（かいうんばし）」を渡ります。
+                </p>
+
+            </div>
+        </article>
+    </div>
+</section>
     </main>
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">jobi café</a>
+        <p>一杯のコーヒーから、心ほどける時間を。</p>
+        <small>&copy; jobi café</small>
+    </footer>
+    
 </body>
 </html>
