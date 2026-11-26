@@ -126,6 +126,237 @@
             </div>
         </article>
     </div>
+        <section class="event-calendar" aria-labelledby="calendar-title">
+    <div class="event-calendar__heading">
+        <p class="event-calendar__eyebrow">EVENT CALENDAR</p>
+        <h2 id="calendar-title">開催カレンダー</h2>
+        <p>気になるイベントを選んで、詳細をご覧ください。</p>
+    </div>
+
+    <div class="calendar">
+        <div class="calendar__controls">
+            <button type="button" id="prev-month" aria-label="前の月">
+                ←
+            </button>
+
+            <h3 id="calendar-month" aria-live="polite"></h3>
+
+            <button type="button" id="next-month" aria-label="次の月">
+                →
+            </button>
+        </div>
+
+        <div class="calendar__weekdays" aria-hidden="true">
+            <span>日</span>
+            <span>月</span>
+            <span>火</span>
+            <span>水</span>
+            <span>木</span>
+            <span>金</span>
+            <span>土</span>
+        </div>
+
+        <div class="calendar__days" id="calendar-days"></div>
+        <p class="calendar__empty" id="calendar-empty" hidden>
+            この月のイベントは現在予定されていません。
+        </p>
+    </div>
+    </section>
+
+    <dialog class="event-dialog" id="event-dialog"
+            aria-labelledby="dialog-title">
+        <div class="event-dialog__inner">
+            <h2 id="dialog-title"></h2>
+            <p id="dialog-description"></p>
+
+            <dl class="event-dialog__info">
+                <dt>開催日時</dt>
+                <dd id="dialog-date"></dd>
+                <dt>参加料金</dt>
+                <dd id="dialog-price"></dd>
+            </dl>
+
+            <form method="dialog">
+                <button class="event-dialog__close">閉じる</button>
+            </form>
+        </div>
+    </dialog>
 </section>
+<script>
+const calendarEvents = [
+    {
+        date: "2026-12-05",
+        title: "Coffee Tasting",
+        time: "14:00〜15:00",
+        price: "1,500円",
+        description:
+            "産地や焙煎の異なる3種類のコーヒーを飲み比べ。" +
+            "スタッフの解説とともに、香りや味わいの違いを楽しめます。"
+    },
+    {
+        date: "2026-12-12",
+        title: "Seasonal Sweets",
+        time: "14:00〜15:30",
+        price: "1,800円",
+        description:
+            "季節の素材を使ったスイーツと、相性のよいコーヒーをご用意。" +
+            "ゆったりとした午後のひとときをお過ごしください。"
+    },
+    {
+        date: "2026-12-19",
+        title: "Acoustic Night",
+        time: "18:00〜20:00",
+        price: "2,000円（1ドリンク付き）",
+        description:
+            "温かいコーヒーとともに、アコースティックギターの生演奏を。" +
+            "やさしい音楽に包まれる夜をお楽しみください。"
+    }
+];
+
+const monthLabel = document.getElementById("calendar-month");
+const daysContainer = document.getElementById("calendar-days");
+const emptyMessage = document.getElementById("calendar-empty");
+const eventDialog = document.getElementById("event-dialog");
+
+const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "short"
+});
+
+// 最初は2026年12月を表示（月は0から数える）
+let displayYear = 2026;
+let displayMonth = 11;
+
+function createDateKey(year, month, day) {
+    return [
+        year,
+        String(month + 1).padStart(2, "0"),
+        String(day).padStart(2, "0")
+    ].join("-");
+}
+
+function openEventDetails(event) {
+    const [year, month, day] = event.date.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
+
+    document.getElementById("dialog-title").textContent = event.title;
+    document.getElementById("dialog-description").textContent =
+        event.description;
+    document.getElementById("dialog-date").textContent =
+        `${dateFormatter.format(date)} ${event.time}`;
+    document.getElementById("dialog-price").textContent = event.price;
+
+    eventDialog.showModal();
+}
+
+function renderCalendar() {
+    monthLabel.textContent =
+        `${displayYear}年${displayMonth + 1}月`;
+    daysContainer.replaceChildren();
+
+    const firstWeekday =
+        new Date(displayYear, displayMonth, 1).getDay();
+    const lastDay =
+        new Date(displayYear, displayMonth + 1, 0).getDate();
+
+    const today = new Date();
+    const todayKey = createDateKey(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
+    );
+
+    const cellCount = Math.ceil((firstWeekday + lastDay) / 7) * 7;
+    let hasEvents = false;
+
+    for (let index = 0; index < cellCount; index++) {
+        const cell = document.createElement("div");
+        cell.className = "calendar__day";
+
+        const day = index - firstWeekday + 1;
+
+        // 月の前後の空白
+        if (day < 1 || day > lastDay) {
+            cell.classList.add("calendar__day--blank");
+            cell.setAttribute("aria-hidden", "true");
+            daysContainer.append(cell);
+            continue;
+        }
+
+        const dateKey = createDateKey(displayYear, displayMonth, day);
+        const date = new Date(displayYear, displayMonth, day);
+        const dateLabel = document.createElement("time");
+
+        dateLabel.className = "calendar__date";
+        dateLabel.dateTime = dateKey;
+        dateLabel.textContent = `${day}日`;
+        dateLabel.setAttribute(
+            "aria-label",
+            dateFormatter.format(date)
+        );
+
+        if (dateKey === todayKey) {
+            dateLabel.setAttribute("aria-current", "date");
+        }
+
+        cell.append(dateLabel);
+
+        const dailyEvents = calendarEvents.filter(
+            event => event.date === dateKey
+        );
+
+        if (dailyEvents.length > 0) {
+            hasEvents = true;
+            cell.classList.add("calendar__day--has-event");
+        }
+
+        dailyEvents.forEach(event => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "calendar__event";
+            button.textContent = event.title;
+            button.setAttribute(
+                "aria-label",
+                `${dateFormatter.format(date)} ${event.title}の詳細`
+            );
+            button.setAttribute("aria-haspopup", "dialog");
+
+            button.addEventListener("click", () => {
+                openEventDetails(event);
+            });
+
+            cell.append(button);
+        });
+
+        daysContainer.append(cell);
+    }
+
+    emptyMessage.hidden = hasEvents;
+}
+
+function changeMonth(amount) {
+    const nextDate = new Date(
+        displayYear,
+        displayMonth + amount,
+        1
+    );
+
+    displayYear = nextDate.getFullYear();
+    displayMonth = nextDate.getMonth();
+    renderCalendar();
+}
+
+document.getElementById("prev-month").addEventListener("click", () => {
+    changeMonth(-1);
+});
+
+document.getElementById("next-month").addEventListener("click", () => {
+    changeMonth(1);
+});
+
+renderCalendar();
+    </script>
 </body>
 </html>

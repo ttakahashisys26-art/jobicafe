@@ -150,3 +150,264 @@
         padding: 20px;
     }
 }
+
+/* 開催カレンダー */
+.event-calendar {
+    --calendar-paper: #fffdf9;
+    --calendar-brown: #4c3528;
+    --calendar-soft: #745a48;
+    --calendar-accent: #a96042;
+    --calendar-line: #ded2c2;
+
+    padding: 64px 24px 96px;
+    background: #f8f4ed;
+    color: var(--calendar-brown);
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN",
+        Meiryo, sans-serif;
+    line-height: 1.75;
+}
+
+.event-calendar,
+.event-calendar * {
+    box-sizing: border-box;
+}
+
+.event-calendar__heading {
+    margin-bottom: 38px;
+    text-align: center;
+}
+
+.event-calendar__eyebrow {
+    margin: 0;
+    color: var(--calendar-accent);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+}
+
+.event-calendar__heading h2 {
+    margin: 9px 0 8px;
+    font-size: clamp(23px, 3vw, 32px);
+    font-weight: 500;
+}
+
+.event-calendar__heading > p:last-child {
+    margin: 0;
+    color: var(--calendar-soft);
+    font-size: 14px;
+}
+
+.calendar {
+    max-width: 1120px;
+    margin-inline: auto;
+    overflow: hidden;
+    border: 1px solid var(--calendar-line);
+    background: var(--calendar-paper);
+}
+
+.calendar__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+}
+
+.calendar__controls h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.calendar__controls button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--calendar-line);
+    background: transparent;
+    color: var(--calendar-brown);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calendar__controls button:hover {
+    background: #f8f4ed;
+}
+
+.calendar__weekdays,
+.calendar__days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar__weekdays {
+    border-top: 1px solid var(--calendar-line);
+    background: #eee3d3;
+    text-align: center;
+    font-size: 12px;
+}
+
+.calendar__weekdays span {
+    padding: 10px 0;
+}
+
+.calendar__day {
+    min-height: 120px;
+    padding: 10px;
+    border-top: 1px solid var(--calendar-line);
+}
+
+/* 各行の左端以外に縦線 */
+.calendar__day:not(:nth-child(7n + 1)) {
+    border-left: 1px solid var(--calendar-line);
+}
+
+.calendar__day--blank {
+    background: #f8f4ed;
+}
+
+.calendar__date {
+    display: inline-grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    font-size: 13px;
+}
+
+.calendar__date[aria-current="date"] {
+    border-radius: 50%;
+    background: var(--calendar-brown);
+    color: white;
+}
+
+.calendar__event {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 7px 8px;
+    border: 0;
+    border-left: 3px solid var(--calendar-accent);
+    background: #f4e7dc;
+    color: #78432e;
+    font: inherit;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.calendar__event:hover {
+    background: #ead4c3;
+}
+
+.calendar__empty {
+    margin: 0;
+    padding: 20px;
+    border-top: 1px solid var(--calendar-line);
+    color: var(--calendar-soft);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* 詳細画面 */
+.event-dialog {
+    box-sizing: border-box;
+    width: min(520px, calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+    padding: 0;
+    overflow: auto;
+    border: 1px solid #ded2c2;
+    background: #fffdf9;
+    color: #4c3528;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.8;
+}
+
+.event-dialog::backdrop {
+    background: rgb(76 53 40 / 45%);
+}
+
+.event-dialog__inner {
+    padding: 32px;
+}
+
+.event-dialog h2 {
+    margin: 0 0 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.event-dialog__info {
+    margin-block: 24px;
+    font-size: 14px;
+}
+
+.event-dialog__info dt {
+    margin-top: 12px;
+    color: #745a48;
+    font-weight: 600;
+}
+
+.event-dialog__info dd {
+    margin: 4px 0 0;
+}
+
+.event-dialog__close {
+    padding: 10px 24px;
+    border: 1px solid #a96042;
+    background: #a96042;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.calendar button:focus-visible,
+.event-dialog button:focus-visible {
+    outline: 3px solid #a96042;
+    outline-offset: 3px;
+}
+
+/* スマホは日付順の一覧表示 */
+@media (max-width: 600px) {
+    .event-calendar {
+        padding: 48px 16px 64px;
+    }
+
+    .calendar__controls {
+        padding: 16px;
+    }
+
+    .calendar__weekdays,
+    .calendar__day--blank,
+    .calendar__day:not(.calendar__day--has-event) {
+        display: none;
+    }
+
+    .calendar__days {
+        display: block;
+    }
+
+    .calendar__day {
+        min-height: auto;
+        padding: 16px;
+        border-left: 0;
+    }
+
+    .calendar__day:not(:nth-child(7n + 1)) {
+        border-left: 0;
+    }
+
+    .calendar__date {
+        width: auto;
+        padding-inline: 8px;
+    }
+
+    .calendar__event {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .event-dialog__inner {
+        padding: 24px;
+    }
+}
